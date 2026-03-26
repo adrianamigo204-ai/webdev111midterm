@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | Luna Vista Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="reservation-page">
+    <header class="topbar static-topbar">
+        <a class="brand" href="index.html">Luna Vista Resort</a>
+        <nav aria-label="Primary">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About Luna Vista</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="reservation-layout" id="reservation">
+        <section class="carousel-card" id="gallery" aria-label="Resort highlights">
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Luxury suite with ocean view">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb21031?auto=format&fit=crop&w=1600&q=80" alt="Resort pool during sunset">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=80" alt="Beachfront dinner setup">
+                </div>
+                <button class="carousel-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-btn next" type="button" aria-label="Next image">&#10095;</button>
+            </div>
+            <div class="dots" aria-label="Select image">
+                <button class="dot active" type="button" aria-label="Show first image"></button>
+                <button class="dot" type="button" aria-label="Show second image"></button>
+                <button class="dot" type="button" aria-label="Show third image"></button>
+            </div>
+        </section>
+
+        <section class="reservation-card">
+            <h1>Reservation Form</h1>
+            <p>Complete your information to secure your booking.</p>
+            <form class="reservation-form" id="reservationForm">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" required>
+                
+                <label for="resAddress">Address</label>
+                <input id="resAddress" name="resAddress" type="text" required>
+                
+                <label for="resEmail">Email</label>
+                <input id="resEmail" name="resEmail" type="email" required>
+                
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" required>
+
+                <div class="two-col">
+                    <div>
+                        <label for="checkIn">Check-In Date</label>
+                        <input id="checkIn" name="checkIn" type="date" required>
+                    </div>
+                    <div>
+                        <label for="checkOut">Check-Out Date</label>
+                        <input id="checkOut" name="checkOut" type="date" required>
+                    </div>
+                </div>
+
+                <div class="two-col">
+                    <div>
+                        <label for="guests">Guests</label>
+                        <input id="guests" name="guests" type="number" min="1" max="12" required>
+                    </div>
+                    <div>
+                        <label for="roomType">Room Type</label>
+                        <select id="roomType" name="roomType" required>
+                            <option value="">Choose room</option>
+                            <option>Deluxe Suite</option>
+                            <option>Ocean Villa</option>
+                            <option>Family Room</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="requests">Special Requests</label>
+                <textarea id="requests" name="requests" rows="3" placeholder="Airport pickup, dietary needs, etc."></textarea>
+
+                <button type="submit">Confirm Reservation</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>This is Web Development Sample by BossKramAteru</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

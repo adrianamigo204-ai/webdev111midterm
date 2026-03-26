@@ -1,0 +1,135 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Tickets</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tickets">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets">Tickets</a>
+        <a href="venue.html" data-nav="venue">Venue</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="admin-login.html" data-nav="admin">Admin</a>
+      </nav>
+      <button class="btn btn--ghost" type="button" data-party-toggle>Party Mode: OFF</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Tickets & Access</h1>
+
+    <section class="grid">
+      <article class="card">
+        <span class="badge">Starter</span>
+        <h3>Pulse Pass</h3>
+        <p>General entry, standing zone, and merch lane access.</p>
+        <strong>$45</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+      <article class="card">
+        <span class="badge">Most Popular</span>
+        <h3>Glow Pass</h3>
+        <p>Priority entry, lounge access, and 1 drink ticket.</p>
+        <strong>$85</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+      <article class="card">
+        <span class="badge">VIP</span>
+        <h3>Orbit Pass</h3>
+        <p>Balcony seating, backstage tour, and event photo pack.</p>
+        <strong>$140</strong>
+        <a class="btn btn--ghost" href="contact.html">Ask for Group Rates</a>
+      </article>
+    </section>
+
+    <section style="margin-top: 2.5rem;">
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Quick Ticket Builder</h2>
+        <div class="ticket-row" data-ticket-row data-price="45">
+          <div>
+            <strong>Pulse Pass</strong>
+            <p>Entry + merch lane</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$45 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-price="85">
+          <div>
+            <strong>Glow Pass</strong>
+            <p>Priority entry + lounge</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$85 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-price="140">
+          <div>
+            <strong>Orbit Pass</strong>
+            <p>Balcony + backstage</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$140 each</div>
+        </div>
+        <div class="total-box" style="margin-top: 1.2rem;">
+          Total: <span data-total>$0</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: 2.5rem;">
+      <h2 class="section-title">FAQ</h2>
+      <div class="accordion" data-accordion>
+        <div class="accordion-item open">
+          <button type="button">What is included with a ticket?</button>
+          <div class="content">
+            Every ticket includes entry, venue access, and the Nexus pop-up experience. Glow and Orbit add lounge perks.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button">Can I transfer my ticket?</button>
+          <div class="content">
+            Yes. Tickets can be transferred up to 6 hours before doors open. Contact our support crew.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button">Do you offer group discounts?</button>
+          <div class="content">
+            Groups of 8 or more get custom bundles. Hit us up on the contact page for a quick quote.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Tickets Desk</p>
+      <p>© <span data-year></span> Nexus Events y BosskramAteru. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
+
+
+
+

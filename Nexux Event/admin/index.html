@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin-dashboard">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="../index.html">Nexus Events</a>
+      <nav class="nav-links">
+        <a href="../index.html">Back to Site</a>
+        <button class="btn btn--ghost" type="button" data-admin-logout>Log Out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero admin-hero">
+      <div>
+        <h1>Admin Index</h1>
+        <p>Quick control of events, tickets, venue operations, and guest messages. Keep every Nexus night running loud and smooth.</p>
+        <div class="button-row">
+          <button class="btn btn--big" type="button">+ New Event</button>
+          <button class="btn btn--big btn--alt" type="button">Update Ticket Tiers</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="sticker">LIVE</div>
+        <h2>Tonight's Headliner</h2>
+        <p>Neon Circuit Live · 9:00 PM · Main Hall</p>
+        <div class="tag-row">
+          <span class="tag">Crew Ready</span>
+          <span class="tag">Stage Check</span>
+          <span class="tag">VIP List</span>
+        </div>
+        <a class="btn" href="../events.html">View Public Page</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <strong>1,248</strong>
+        Tickets sold today
+      </div>
+      <div class="stat">
+        <strong>92%</strong>
+        Venue capacity booked
+      </div>
+      <div class="stat">
+        <strong>18</strong>
+        Active staff on duty
+      </div>
+      <div class="stat">
+        <strong>6</strong>
+        Open support tickets
+      </div>
+    </section>
+
+    <section class="admin-grid">
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Upcoming Events</h2>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Event</span>
+            <span>Date</span>
+            <span>Status</span>
+          </div>
+          <div class="table-row">
+            <span>Pixel Parade</span>
+            <span>Apr 12</span>
+            <span class="status status--green">On Track</span>
+          </div>
+          <div class="table-row">
+            <span>Metro Market Nights</span>
+            <span>Apr 18</span>
+            <span class="status status--yellow">Staffing</span>
+          </div>
+          <div class="table-row">
+            <span>Studio Rooftop Sessions</span>
+            <span>Apr 22</span>
+            <span class="status status--green">Confirmed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Ticket Pulse</h2>
+        <div class="ticket-meter">
+          <div class="meter-row">
+            <span>Pulse Pass</span>
+            <div class="meter"><span style="width:70%"></span></div>
+            <strong>70%</strong>
+          </div>
+          <div class="meter-row">
+            <span>Glow Pass</span>
+            <div class="meter"><span style="width:54%"></span></div>
+            <strong>54%</strong>
+          </div>
+          <div class="meter-row">
+            <span>Orbit Pass</span>
+            <div class="meter"><span style="width:32%"></span></div>
+            <strong>32%</strong>
+          </div>
+        </div>
+        <div class="button-row" style="margin-top:1rem;">
+          <button class="btn btn--ghost" type="button">Adjust Pricing</button>
+          <button class="btn btn--ghost" type="button">Export List</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Venue Ops</h2>
+        <ul class="checklist">
+          <li class="checklist-item">
+            <span class="status status--green">Ready</span>
+            Stage lighting rig checked
+          </li>
+          <li class="checklist-item">
+            <span class="status status--green">Ready</span>
+            Market lane vendor load-in
+          </li>
+          <li class="checklist-item">
+            <span class="status status--yellow">Pending</span>
+            Rooftop sound calibration
+          </li>
+          <li class="checklist-item">
+            <span class="status status--red">Alert</span>
+            VIP lounge restock
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title" style="margin-top:0;">Guest Inbox</h2>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Sender</span>
+            <span>Topic</span>
+            <span>Priority</span>
+          </div>
+          <div class="table-row">
+            <span>J. Alvarez</span>
+            <span>Group Booking</span>
+            <span class="status status--yellow">Medium</span>
+          </div>
+          <div class="table-row">
+            <span>Press Studio</span>
+            <span>Media Pass</span>
+            <span class="status status--red">High</span>
+          </div>
+          <div class="table-row">
+            <span>Merch Lab</span>
+            <span>Inventory</span>
+            <span class="status status--green">Low</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Admin Desk</p>
+      <p>© <span data-year></span> Nexus Events y BosskramAteru. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/admin.js" defer></script>
+</body>
+</html>
+

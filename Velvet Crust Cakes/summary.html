@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Velvet Crust Cakes | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+        <div class="logo">Velvet Crust</div>
+        <div class="nav-links">
+            <a href="index.html" class="btn-cream">Home</a>
+            <a href="shop.html" class="btn-cream">Shop</a>
+            <a href="summary.html" class="btn-cream">Cart (<span id="cart-count">0</span>)</a>
+            <a href="login.html" class="btn-cream" style="background:transparent; border:1px solid var(--cream); color:white;">Login</a>
+        </div>
+    </nav>
+
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="container" style="max-width: 400px; text-align: center;">
+            <h2 id="modal-title">Confirm Selection</h2>
+            <p id="modal-msg"></p>
+            <div id="qty-box" style="display:none; margin: 20px;">
+                <label>Quantity: </label>
+                <input type="number" id="item-qty" value="1" min="1" style="width: 60px; padding: 5px;">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button id="modal-yes" class="btn-cream" style="flex:1">Yes</button>
+                <button id="modal-no" class="btn-cream" style="flex:1; background:rgba(255,255,255,0.2); color:white;">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="summary" class="page">
+            <h2>Order Summary</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead style="border-bottom: 1px solid var(--glass-border);">
+                    <tr><th>Item</th><th>Qty</th><th>Subtotal</th><th>Action</th></tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+            <div style="text-align: right; margin-top: 30px;">
+                <h3>Grand Total: $<span id="total-price">0</span></h3>
+                <button class="btn-cream" onclick="alert('Proceeding to Payment...')">Checkout</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
