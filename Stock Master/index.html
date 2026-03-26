@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster Retail</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; 
+            color: #333;
+        }
+
+        
+        header {
+            background-color: #726e6e;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+
+        .logo {
+            font-size: 5em;
+            font-weight: bold;
+            color: #728294; 
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .barcode-icon {
+            font-size: 0.6em;
+            margin-left: 8px;
+            letter-spacing: 1px; 
+            color: #555;
+        }
+
+        nav ul {
+            list-style:none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1em;
+            
+        }
+
+        nav ul li a:hover {
+            color: #f82500;
+        }
+
+      
+        .main-content {
+            padding: 40px 30px;
+            max-width: 2000px;
+            max-height: 2000px;
+            margin: 50px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 1);
+        }
+
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #757e88;
+        }
+
+      
+        .content-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        .content-section h3 {
+            margin-bottom: 15px;
+            color: #798694;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+        }
+
+        
+        .reports-button {
+            display: inline-block;
+            padding: 12px 15px;
+            background-color: #4f5550; 
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            height: 40px;
+            position: relative;
+            left: 100px;
+            bottom: 5px;
+            
+          
+        }
+
+        .reports-button:hover {
+            background-color: #c3cfc6;
+        }
+
+        
+        .industrial-element {
+            background-color: #e9ecef; 
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .industrial-element h4 {
+            margin-bottom: 10px;
+            color: #343a40;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            StockMaster<span class="barcode-icon">|||</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Stock</a></li>
+                <li><a href="#">Suppliers</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#" class="reports-button">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1>Welcome to StockMaster Retail</h1>
+
+        <div class="content-section">
+            <h3>Manage Your Retail Operations</h3>
+            <p>StockMaster Retail provides a comprehensive solution for managing your inventory, suppliers, and orders efficiently. Our platform is designed to streamline your business processes, giving you real-time insights into your stock levels and sales performance.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Key Features</h3>
+            <p>Explore the core functionalities designed to empower your retail business:</p>
+            <ul>
+                <li><strong>Inventory Tracking:</strong> Real-time updates on stock levels, low stock alerts, and detailed inventory reports.</li>
+                <li><strong>Supplier Management:</strong> Keep all your supplier information organized in one place, including contact details, product lists, and order history.</li>
+                <li><strong>Order Fulfillment:</strong> Create, track, and manage customer orders and purchase orders with ease.</li>
+            </ul>
+        </div>
+
+        <div class="content-section industrial-element">
+            <h4>Industrial Design Elements</h4>
+            <p>Our interface incorporates industrial flat design principles for clarity and efficiency. Notice the bold "Action" buttons and the subtle barcode-style logo, reflecting our focus on robust stock management.</p>
+        </div>
+
+        
+
+    </div>
+
+</body>
+</html>

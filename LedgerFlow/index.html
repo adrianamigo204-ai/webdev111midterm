@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LedgerFlow</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <h1>LedgerFlow</h1>
+      <div class="sub">Create invoices, manage clients, set due dates, export link/PDF</div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="LedgerFlow tabs">
+      <button class="tab" id="tabInvoice" role="tab" aria-selected="true" aria-controls="panelInvoice">Invoice</button>
+      <button class="tab" id="tabClients" role="tab" aria-selected="false" aria-controls="panelClients">Clients</button>
+      <button class="tab" id="tabExport" role="tab" aria-selected="false" aria-controls="panelExport">Export</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="panelInvoice" role="tabpanel" aria-labelledby="tabInvoice">
+      <div class="grid two">
+        <div class="card">
+          <h2>Your business</h2>
+          <div class="row cols2">
+            <div>
+              <label for="fromName">Name</label>
+              <input id="fromName" placeholder="e.g., Acme Studio" />
+            </div>
+            <div>
+              <label for="fromEmail">Email</label>
+              <input id="fromEmail" placeholder="e.g., billing@acme.com" />
+            </div>
+          </div>
+          <label for="fromAddress">Address</label>
+          <textarea id="fromAddress" placeholder="Street, City, Postal Code, Country"></textarea>
+        </div>
+
+        <div class="card">
+          <h2>Invoice details</h2>
+          <div class="row cols3">
+            <div>
+              <label for="invoiceNumber">Invoice #</label>
+              <input id="invoiceNumber" class="mono" placeholder="INV-0001" />
+            </div>
+            <div>
+              <label for="issueDate">Issue date</label>
+              <input id="issueDate" type="date" />
+            </div>
+            <div>
+              <label for="dueDate">Due date</label>
+              <input id="dueDate" type="date" />
+            </div>
+          </div>
+          <label for="clientSelect">Bill to (client)</label>
+          <select id="clientSelect"></select>
+          <div class="btns">
+            <button class="btn" id="goClientsBtn" type="button">Add/edit clients</button>
+            <button class="btn primary" id="saveDraftBtn" type="button">Save draft</button>
+          </div>
+          <div id="draftStatus" class="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <h2>Line items</h2>
+        <table class="table" aria-label="Invoice line items">
+          <thead>
+            <tr>
+              <th style="width:44%">Description</th>
+              <th style="width:16%" class="right">Qty</th>
+              <th style="width:20%" class="right">Unit price</th>
+              <th style="width:20%" class="right">Amount</th>
+              <th style="width:1%"></th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody"></tbody>
+        </table>
+        <div class="btns">
+          <button class="btn" id="addItemBtn" type="button">Add item</button>
+          <span class="pill"><span class="mono" id="itemsCount">0</span> items</span>
+        </div>
+
+        <div class="grid two" style="margin-top:16px">
+          <div>
+            <label for="notes">Notes</label>
+            <textarea id="notes" placeholder="Optional note to your client"></textarea>
+          </div>
+          <div>
+            <div class="row cols3">
+              <div>
+                <label for="currency">Currency</label>
+                <select id="currency">
+                  <option value="USD">USD</option>
+                  <option value="SGD">SGD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="GBP">PHP</option>
+                </select>
+              </div>
+              <div>
+                <label for="taxRate">Tax %</label>
+                <input id="taxRate" type="number" min="0" step="0.01" placeholder="0" />
+              </div>
+              <div>
+                <label for="discount">Discount</label>
+                <input id="discount" type="number" min="0" step="0.01" placeholder="0" />
+              </div>
+            </div>
+
+            <table class="table" aria-label="Totals">
+              <tbody>
+                <tr>
+                  <th>Subtotal</th>
+                  <td class="right mono" id="subtotalText">0.00</td>
+                </tr>
+                <tr>
+                  <th>Tax</th>
+                  <td class="right mono" id="taxText">0.00</td>
+                </tr>
+                <tr>
+                  <th>Discount</th>
+                  <td class="right mono" id="discountText">0.00</td>
+                </tr>
+                <tr>
+                  <th>Total</th>
+                  <td class="right mono" id="totalText">0.00</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btns">
+              <button class="btn primary" id="goExportBtn" type="button">Preview / export</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="panelClients" role="tabpanel" aria-labelledby="tabClients" hidden>
+      <div class="grid two">
+        <div class="card">
+          <h2>Add client</h2>
+          <input id="clientId" type="hidden" />
+          <label for="clientName">Client name</label>
+          <input id="clientName" placeholder="e.g., Jane Doe / Contoso Ltd." />
+          <div class="row cols2">
+            <div>
+              <label for="clientEmail">Email</label>
+              <input id="clientEmail" placeholder="e.g., jane@contoso.com" />
+            </div>
+            <div>
+              <label for="clientPhone">Phone</label>
+              <input id="clientPhone" placeholder="Optional" />
+            </div>
+          </div>
+          <label for="clientAddress">Address</label>
+          <textarea id="clientAddress" placeholder="Street, City, Postal Code, Country"></textarea>
+          <div class="btns">
+            <button class="btn primary" id="saveClientBtn" type="button">Save client</button>
+            <button class="btn" id="clearClientBtn" type="button">Clear</button>
+          </div>
+          <div id="clientStatus" class="status" aria-live="polite"></div>
+        </div>
+
+        <div class="card">
+          <h2>Clients</h2>
+          <table class="table" aria-label="Client list">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th class="right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="clientsBody"></tbody>
+          </table>
+          <div class="btns">
+            <button class="btn" id="backToInvoiceBtn" type="button">Back to invoice</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="panelExport" role="tabpanel" aria-labelledby="tabExport" hidden>
+      <div class="grid two">
+        <div class="card">
+          <h2>Export</h2>
+          <div class="muted">Share a link (includes invoice + client info), or print to PDF.</div>
+          <div class="btns">
+            <button class="btn primary" id="copyLinkBtn" type="button">Copy link</button>
+            <button class="btn" id="loadLinkBtn" type="button">Load from link</button>
+            <button class="btn warning" id="printPdfBtn" type="button">Print / Save PDF</button>
+          </div>
+          <div id="exportStatus" class="status" aria-live="polite"></div>
+          <div class="btns">
+            <button class="btn" id="backToInvoiceBtn2" type="button">Back to invoice</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Preview</h2>
+          <div id="previewMount"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

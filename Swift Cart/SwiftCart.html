@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Swift Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: antiquewhite;
+            
+        }
+        h1 {
+            
+            display: flex;
+        }
+        ul {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            max-width: 700px;
+            margin: 10px auto;
+           flex-direction: column;
+           justify-content: flex-start;
+           left: 9.8px;
+           justify-content: space-evenly;
+           position: fixed;
+        }
+        li {
+            background-color: rgb(211, 197, 118);
+            margin: 10px 0;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #content {
+            text-align: center;
+            height: 600px;
+            width: 85%;
+            margin-left: 230px;
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+         .shipping-form {
+          display: flex;
+         flex-direction: column;
+         
+        }
+
+         .shipping-form label {
+           margin-top: 10px;
+           font-weight: bold;
+          }
+
+         .shipping-form input {
+          padding: 8px;
+            margin-top: 5px;
+         border: 1px solid #ccc;
+           border-radius: 4px;
+          }
+
+          .shipping-form button {
+          margin-top: 15px;
+          padding: 10px;
+           background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 4px;
+         cursor: pointer;
+        }
+
+         .shipping-form button:hover {
+         background-color: #218838;
+         }
+         .track-search {
+        display: flex;
+         flex-direction: column;
+          }
+
+         .track-search input {
+          padding: 8px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+         border-radius: 4px;
+             }
+
+         .track-search button {
+         margin-top: 10px;
+         padding: 10px;
+          background-color: #007BFF;
+         color: white;
+          border: none;
+          border-radius: 4px;
+        cursor: pointer;
+  }
+
+  .track-search button:hover {
+    background-color: #01e9af;
+  }
+                
+    </style>
+</head>
+<body>
+
+<h1>Swift Cart</h1>
+
+<ul>
+    <li onclick="otin('browse')">Browse Store</li>
+    <li onclick="otin('add')">Add to Cart</li>
+    <li onclick="otin('shipping')">Enter Shipping</li>
+    <li onclick="otin('track')">Track Live Package</li>
+</ul>
+
+<div id="content">
+ <b> <p>Start Shopping Now!</p> </b>
+</div>
+
+<script>
+function otin(option) {
+  const contentDiv = document.getElementById('content');
+
+  contentDiv.innerHTML = '';
+
+  if (option === 'shipping') {
+    
+    const form = document.createElement('form');
+    form.className = 'shipping-form';
+
+    form.innerHTML = `
+      <h2>Enter Shipping Details</h2>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your full name" required>
+      
+      <label for="address">Address:</label>
+      <input type="text" id="address" placeholder="Street address" required>
+      
+      <label for="city">City:</label>
+      <input type="text" id="city" placeholder="City" required>
+      
+      <label for="state">State:</label>
+      <input type="text" id="state" placeholder="State" required>
+      
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip" placeholder="ZIP Code" required>
+      
+      <button type="submit">Submit</button>
+    `;
+
+    
+   
+    contentDiv.appendChild(form);
+    } else if (option === 'track') {
+   
+    const trackDiv = document.createElement('div');
+    trackDiv.className = 'track-search';
+
+    trackDiv.innerHTML = `
+      <h2>Track Your Package</h2>
+      <input type="text" id="trackingNumber" placeholder="Enter tracking number" required>
+      <button onclick="trackPackage()">Track</button>
+      <div id="trackingResult" style="margin-top:15px;"></div>
+    `;
+
+    
+    contentDiv.appendChild(trackDiv);
+  } else {
+    
+    switch(option) {
+      case 'browse':
+        contentDiv.innerHTML += '<h2>Browse Store</h2><p>Here you can browse through the available products.</p>';
+        break;
+      case 'add':
+        contentDiv.innerHTML += '<h2>Add to Cart</h2><p>Select products and add them to your shopping cart.</p>';
+        break;
+      case 'track':
+        contentDiv.innerHTML += '<h2>Track Live Package</h2><p>Enter your tracking number to see the live status of your package.</p>';
+        break;
+      default:
+        contentDiv.innerHTML += '<p>Select an option to see details.</p>';
+    }
+  }
+}
+</script>
+
+
+</body>
+</html>
