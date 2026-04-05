@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Sync</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Health Sync</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Your Partner in Health Management</h2>
+            <p>We provide seamless synchronization of your health data for a healthier you.</p>
+            <button id="regButton" class="reg-button">Register</button>
+            <span id="verifiedBadge" class="verified-badge">Verified</span>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Trust-Blue</h2>
+            <p>Trust-Blue is dedicated to offering clean and professional solutions for your health management needs. Our platform is designed with a focus on user-friendliness and data integrity.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-item">
+                <h3>Data Synchronization</h3>
+                <p>Securely sync your health data across devices.</p>
+            </div>
+            <div class="service-item">
+                <h3>Health Insights</h3>
+                <p>Gain valuable insights into your health trends.</p>
+            </div>
+            <div class="service-item">
+                <h3>Professional Support</h3>
+                <p>Get reliable support from our expert team.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us!</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Health Sync. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const regButton = document.getElementById('regButton');
+            const verifiedBadge = document.getElementById('verifiedBadge');
+
+            
+            verifiedBadge.style.display = 'none';
+
+            
+            regButton.addEventListener('click', function() {
+                verifiedBadge.style.display = 'inline-block'; 
+            });
+        });
+    </script>
+</body>
+</html>
